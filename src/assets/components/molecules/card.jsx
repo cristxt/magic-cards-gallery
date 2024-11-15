@@ -1,6 +1,6 @@
 import axios from 'axios'; 
 import React, { useState, useEffect } from 'react';
-
+import "./Card.css";
 const ShowMagicInfo = () => {
   const [cards, setcards] = useState ([]);
   useEffect (() => { 
@@ -14,15 +14,23 @@ const ShowMagicInfo = () => {
   }  
   console.log(cards)
   return (
-    <>
+    <div className="magic-card-container">
+      
       {cards.map (card => (
           <div key={card.cmc}>
-            <p>{card.name}</p>
-            <p>Type: {card.type}</p>
-            <p>text: {card.text}</p>
+          <div className="magic-card">
+            <div className="image">
+              <img src={card.imageUrl}/>
+              </div>
+            <p className="name">{card.name}</p>
+            <p className="type"> {card.type}</p>
+            <p className="text"> {card.text}</p>
           </div>
+          </div>
+        
       ))}
-    </>
+      
+    </div>
   )
 };
 
