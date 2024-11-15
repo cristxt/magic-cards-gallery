@@ -14,8 +14,8 @@ const ShowMagicInfo = () => {
   }  
   console.log(cards)
   return (
+    
     <div className="magic-card-container">
-      
       {cards.map (card => (
           <div key={card.cmc}>
           <div className="magic-card">
